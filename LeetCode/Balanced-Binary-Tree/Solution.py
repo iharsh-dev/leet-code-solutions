@@ -13,6 +13,6 @@
 13        if root == None:
 14            return True
 15        if abs(dfs(root.left) - dfs(root.right))<=1:
-16            return self.isBalanced(root.left)&self.isBalanced(root.right)
+16            return self.isBalanced(root.left) and self.isBalanced(root.right)
 17        else:
 18            return False
