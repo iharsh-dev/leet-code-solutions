@@ -1,0 +1,5 @@
+1class Solution:
+2    def minimumCost(self, nums: list[int], k: int) -> int:
+3        som = sum(nums)
+4        n = (som-1)//k
+5        return (n*(n+1)//2)%(10**9+7)
