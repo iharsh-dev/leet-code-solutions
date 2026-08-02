@@ -24,9 +24,10 @@
 24                    queue.append(node.left)
 25                if node.right:
 26                    queue.append(node.right)
-27            level = level[::-1] if count%2 != 0 else level
-28            if len(level) > 0:
-29                ans.append(level)
-30            count+=1
-31        return ans
-32                    
+27            if count%2:
+28                level.reverse()
+29            if len(level) > 0:
+30                ans.append(level)
+31            count+=1
+32        return ans
+33                    
