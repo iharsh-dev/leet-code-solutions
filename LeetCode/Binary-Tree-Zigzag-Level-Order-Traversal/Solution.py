@@ -11,19 +11,19 @@
 11            return []
 12
 13
-14        queue = [root]
+14        queue = deque([root])
 15        ans = []
 16        count = 0
 17        while queue:
 18            level = []
-19            order = []
-20            n = len(queue)
-21            for i in range(n):
-22                if queue[i]:
-23                    level.append(queue[i].val)
-24                    order.append(queue[i].left)
-25                    order.append(queue[i].right)
-26            queue = order[:]
+19            n = len(queue)
+20            for _ in range(n):
+21                node = queue.popleft()
+22                level.append(node.val)
+23                if node.left:
+24                    queue.append(node.left)
+25                if node.right:
+26                    queue.append(node.right)
 27            level = level[::-1] if count%2 != 0 else level
 28            if len(level) > 0:
 29                ans.append(level)
