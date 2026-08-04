@@ -12,9 +12,9 @@
 12            ans = 0
 13
 14            for i in nums:
-15                ans += (i//mid)
-16                if i % mid != 0:
-17                    ans+=1 
+15                ans += (i + mid - 1)//mid
+16                if ans > threshold:
+17                    break
 18            if ans > threshold:
 19                left = mid + 1
 20            else:
