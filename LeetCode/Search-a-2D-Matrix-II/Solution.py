@@ -3,13 +3,12 @@
 3        m, n = len(matrix), len(matrix[0])
 4        row = 0
 5        col = n - 1
-6        found = True
-7        while row < m and col >= 0:
-8            if matrix[row][col] == target:
-9                return True
-10            if matrix[row][col] > target:
-11                col -= 1
-12            else:
-13                row += 1
-14        
-15        return False
+6        while row < m and col >= 0:
+7            if matrix[row][col] == target:
+8                return True
+9            if matrix[row][col] > target:
+10                col -= 1
+11            else:
+12                row += 1
+13        
+14        return False
