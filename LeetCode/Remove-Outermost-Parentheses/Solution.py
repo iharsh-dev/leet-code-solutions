@@ -1,16 +1,19 @@
 1class Solution:
 2    def removeOuterParentheses(self, s: str) -> str:
-3        stack = 0
-4        ans = []
-5        for i in s:
-6            if i == '(':
-7                if stack != 0:
-8                    ans.append(i)
-9                stack += 1
-10            else:
-11                stack -= 1
-12                if stack != 0:
-13                    ans.append(i)
-14            
-15        return "".join(ans)
-16            
+3        arr = 0
+4        brr = []
+5        j = 0 
+6        for i in range(len(s)):
+7            if s[i] == '(':
+8                arr+=1 
+9            else:
+10                arr-=1
+11            if arr == 0:
+12                brr.append(s[j:i+1])
+13                j = i + 1 
+14        for i in range(len(brr)):
+15            brr[i] = brr[i][1:-1] 
+16        ans = ""
+17        for i in brr:
+18            ans+=i 
+19        return ans
